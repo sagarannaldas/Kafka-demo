@@ -11,7 +11,8 @@
 	<groupId>com.sagarannaldas</groupId>
 	<artifactId>Kafka-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Kafka-demo</name>
+    <packaging>pom</packaging>
+    <name>Kafka-demo</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -20,7 +21,11 @@
 	<developers>
 		<developer/>
 	</developers>
-	<scm>
+    <modules>
+        <module>producer-svc</module>
+		<module>consumer-svc</module>
+	</modules>
+    <scm>
 		<connection/>
 		<developerConnection/>
 		<tag/>
