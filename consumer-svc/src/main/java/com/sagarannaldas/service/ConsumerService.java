@@ -10,7 +10,7 @@ public class ConsumerService {
     private String message;
 
     @KafkaListener(topics = "notification", groupId = "email-notification-group")
-    public void  consume(Notification notification) {
+    public void  consume(String notification) {
         message = notification + "Got the notification from kafka";
         System.out.println("Received message: " + message);
     }
