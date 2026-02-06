@@ -1,6 +1,5 @@
 package com.sagarannaldas.service;
 
-import com.sagarannaldas.model.Notification;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -14,8 +13,8 @@ public class ConsumerService {
     @KafkaListener(topics = "notification", groupId = "email-notification-group")
     public void consume(String notification) {
         JSONObject jsonObject = (JSONObject) JSONValue.parse(notification);
-        message = jsonObject + "Got the notification from kafka";
-        System.out.println("Received message: " + jsonObject);
+        String message = jsonObject.get("message").toString() +  "Got the notification from kafka";
+        System.out.println("Received message: " + message);
     }
 
     public String getMessage() {
